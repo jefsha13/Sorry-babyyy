@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Heyyy Shaliii babyyy... 🥺💕</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffebee, #f8bbd0, #e1bee7);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #4a148c;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow-y: auto;
+      position: relative;
+    }
+    .card {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.88);
+      border-radius: 28px;
+      padding: 40px 25px;
+      max-width: 92%;
+      box-shadow: 0 12px 35px rgba(233, 30, 99, 0.25);
+      z-index: 10;
+      position: relative;
+      margin: 20px 0;
+    }
+    .animal {
+      width: 170px;
+      height: auto;
+      margin-bottom: 20px;
+      animation: float 6s ease-in-out infinite;
+    }
+    h1 {
+      font-size: 2.6rem;
+      color: #c2185b;
+      margin: 10px 0 20px;
+    }
+    .message, .sorry-msg {
+      font-size: 1.45rem;
+      line-height: 1.6;
+      margin: 20px 0;
+    }
+    .typing {
+      display: inline-block;
+      overflow: hidden;
+      white-space: pre-wrap;
+      border-right: 3px solid #e91e63;
+      animation: typing 3.8s steps(45) forwards, blink 0.75s infinite;
+      width: 0;
+    }
+    .heart-btn {
+      width: 240px;
+      height: 70px;
+      border-radius: 60px;
+      font-size: 2.2rem;
+      border: none;
+      cursor: pointer;
+      margin: 18px auto;
+      display: block;
+      box-shadow: 0 5px 15px rgba(255,105,180,0.4);
+      transition: all 0.3s ease;
+    }
+    .heart-btn.tapped {
+      opacity: 0.7;
+      transform: scale(0.95);
+    }
+    .heart-btn:nth-child(1) { background: linear-gradient(to right, #ff9a9e, #fecfef); }
+    .heart-btn:nth-child(2) { background: linear-gradient(to right, #f8bbd0, #e1bee7); }
+    .heart-btn:nth-child(3) { background: linear-gradient(to right, #e1bee7, #d7bde2); }
+    .heart-btn:nth-child(4) { background: linear-gradient(to right, #a1c4fd, #c2e9fb); }
+    .reveal-msg {
+      display: none;
+      background: rgba(255, 182, 193, 0.35);
+      border-radius: 20px;
+      padding: 20px;
+      margin: 15px auto;
+      max-width: 85%;
+      font-size: 1.45rem;
+      color: #c2185b;
+      line-height: 1.5;
+      animation: fadeIn 0.8s ease;
+    }
+    .cat-btn {
+      width: 140px;
+      height: 140px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      margin: 20px 15px;
+      transition: transform 0.3s;
+    }
+    .cat-btn:hover, .cat-btn:active {
+      transform: scale(1.1);
+    }
+    .cat-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    button.main-btn {
+      padding: 16px 50px;
+      font-size: 1.5rem;
+      background: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-top: 40px;
+      box-shadow: 0 8px 20px rgba(233,30,99,0.35);
+    }
+    button.main-btn:hover { transform: scale(1.05); background: #f06292; }
+    .floating {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .float-item {
+      position: absolute;
+      font-size: 1.8rem;
+      color: rgba(255, 255, 255, 0.7);
+      animation: floatUp 18s linear infinite;
+      white-space: nowrap;
+    }
+    #finalSorry { display: none; }
+    #confetti { position: absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:5; }
+
+    @keyframes typing { from { width: 0; } to { width: 100%; } }
+    @keyframes blink { 50% { border-color: transparent; } }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    @keyframes floatUp { 0% { transform: translateY(100%) rotate(0deg); opacity: 0.6; } 100% { transform: translateY(-100%) rotate(720deg); opacity: 0; } }
+  </style>
+</head>
+<body>
+
+  <div class="floating" id="floating"></div>
+  <canvas id="confetti"></canvas>
+
+  <!-- Page 1: Intro -->
+  <div class="card" id="p1">
+    <img src="https://www.pngall.com/wp-content/uploads/5/Cute-Bunny-PNG-Image.png" class="animal" alt="bunny">
+    <h1>Heyyy Shaliii babyyy 🥺💕</h1>
+    <div class="message"><span class="typing">Can we talk for a moment?<br>There's something important<br>I want to tell you. 🥺</span></div>
+    <button class="main-btn" onclick="next(2)">Continue ❤️</button>
+  </div>
+
+  <!-- Page 2: Hurt -->
+  <div class="card" id="p2" style="display:none;">
+    <img src="https://www.pngall.com/wp-content/uploads/2016/05/Cute-Cat-PNG.png" class="animal" alt="cat">
+    <h1>I know...</h1>
+    <div class="message"><span class="typing">I know I hurt you lot yesterday<br>and i been feeling sad about it… 💔</span></div>
+    <button class="main-btn" onclick="next(3)">Next →</button>
+  </div>
+
+  <!-- Page 3: Forgive -->
+  <div class="card" id="p3" style="display:none;">
+    <img src="https://www.pngall.com/wp-content/uploads/5/Cute-Cat-Pleading-PNG-Image.png" class="animal" alt="pleading cat">
+    <h1>Please...</h1>
+    <div class="message"><span class="typing">Please forgive me...<br>I miss you so much. 🥹❤️</span></div>
+    <button class="main-btn" onclick="next(4)">Finish → 💕</button>
+  </div>
+
+  <!-- Page 4: Little things - 4 hearts -->
+  <div class="card" id="p4" style="display:none;">
+    <h1>Little things I want to tell you babyyy….</h1>
+    <p class="message">you...</p>
+    <p style="font-size:1.2rem; opacity:0.8; margin-bottom:30px;">Tap each one</p>
+
+    <button class="heart-btn" onclick="reveal(1)">❤️</button>
+    <div class="reveal-msg" id="msg1">I messed up last night<br>and I’m really sorry for that babyyy🥲😞</div>
+
+    <button class="heart-btn" onclick="reveal(2)">💗</button>
+    <div class="reveal-msg" id="msg2">I promise you babyyy<br>I’ll become better for you shalima😔</div>
+
+    <button class="heart-btn" onclick="reveal(3)">💜</button>
+    <div class="reveal-msg" id="msg3">Please forgive me shaliii…….<br>you mean so much to me 🥹❤️</div>
+
+    <button class="heart-btn" onclick="reveal(4)">💙</button>
+    <div class="reveal-msg" id="msg4">Really Really sorry sweetheart 😞</div>
+
+    <button class="main-btn" onclick="next(5)">My message →</button>
+  </div>
+
+  <!-- Page 5: Cat hearts -->
+  <div class="card" id="p5" style="display:none;">
+    <h1>From my heart...</h1>
+    <p style="font-size:1.3rem; opacity:0.8; margin:20px 0 40px;">Tap to see message ↓</p>
+
+    <button class="cat-btn" onclick="revealCat(1)">
+      <img src="https://png.pngtree.com/png-clipart/20230412/original/pngtree-cute-cat-holding-heart-png-image_9049500.png" class="cat-img" alt="Cat Heart">
+    </button>
+
+    <button class="cat-btn" onclick="revealCat(2)">
+      <img src="https://png.pngtree.com/png-clipart/20230412/original/pngtree-cute-cat-holding-heart-png-image_9049500.png" class="cat-img" alt="Cat Heart">
+    </button>
+
+    <div class="reveal-msg" id="catMsg" style="display:none;">I'm Sorry da chellam... 🥺❤️<br>From the bottom of my heart.</div>
+
+    <button class="main-btn" onclick="showFinal()">I'm Sorry</button>
+  </div>
+
+  <!-- Final Sorry Page -->
+  <div class="card" id="finalSorry" style="display:none;">
+    <h1>I'm Sorry</h1>
+    <p class="sorry-msg">
+I’m really sorry for hurting you…I hate that I made you feel like I don’t care because the truth is you mean everything to me…..Seeing you upset because of me breaks my heart………You deserve all my love, attention, and reassurance not tears……I promise I’ll be better not just in words but in actions babyyyy…I don’t want to lose you because life feels right only when you’re smiling with me……
+
+<span style="color:#e91e63; font-weight:bold; font-size:1.6rem;">I love you Shalima🫂🤍</span>
+    </p>
+  </div>
+
+  <script>
+    // Floating "sorry 🤍"
+    function createFloat() {
+      const el = document.createElement('div');
+      el.className = 'float-item';
+      el.innerHTML = 'sorry 🤍';
+      el.style.left = Math.random() * 100 + 'vw';
+      el.style.animationDuration = (Math.random() * 12 + 15) + 's';
+      el.style.fontSize = (Math.random() * 1.2 + 1.2) + 'rem';
+      el.style.opacity = Math.random() * 0.4 + 0.3;
+      document.getElementById('floating').appendChild(el);
+      setTimeout(() => el.remove(), 25000);
+    }
+    setInterval(createFloat, 1500);
+
+    function next(page) {
+      document.querySelectorAll('.card').forEach(c => c.style.display = 'none');
+      document.getElementById('p' + page).style.display = 'block';
+      window.scrollTo(0, 0); // top-la scroll pannum
+    }
+
+    function reveal(num) {
+      document.getElementById('msg' + num).style.display = 'block';
+      event.target.classList.add('tapped');
+      event.target.disabled = true;
+    }
+
+    function revealCat(num) {
+      document.getElementById('catMsg').style.display = 'block';
+      launchConfetti();
+    }
+
+    function showFinal() {
+      document.querySelectorAll('.card').forEach(c => c.style.display = 'none');
+      document.getElementById('finalSorry').style.display = 'block';
+      launchConfetti();
+      window.scrollTo(0, 0);
+    }
+
+    function launchConfetti() {
+      const canvas = document.getElementById('confetti');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const confetti = [];
+      for (let i = 0; i < 200; i++) {
+        confetti.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height - canvas.height,
+          r: Math.random() * 6 + 2,
+          d: Math.random() * 120 + 60,
+          color: `hsl(${Math.random()*360}, 100%, 65%)`,
+          tilt: Math.random() * 10 - 5,
+          tiltAngle: 0
+        });
+      }
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        confetti.forEach((c, i) => {
+          c.tiltAngle += 0.1;
+          c.y += (Math.cos(c.d) + 3 + c.r / 2) / 2;
+          c.tilt = Math.sin(c.tiltAngle) * 15;
+          if (c.y > canvas.height) confetti.splice(i, 1);
+          ctx.fillStyle = c.color;
+          ctx.beginPath();
+          ctx.arc(c.x, c.y + c.tilt + c.r / 4, c.r, 0, Math.PI * 2, true);
+          ctx.fill();
+        });
+        if (confetti.length) requestAnimationFrame(draw);
+      }
+      draw();
+    }
+  </script>
+
+</body>
+</html>
