@@ -144,31 +144,27 @@
   <div class="floating" id="floating"></div>
   <canvas id="confetti"></canvas>
 
-  <!-- Page 1: Intro -->
   <div class="card" id="p1">
-    <img src="https://www.pngall.com/wp-content/uploads/5/Cute-Bunny-PNG-Image.png" class="animal" alt="bunny">
+    <img src="https://github.com/jefsha13/Sorry-babyyy/blob/main/WhatsApp%20Image%202026-02-16%20at%204.33.07%20AM.jpeg?raw=true" class="animal" alt="bunny">
     <h1>Heyyy Shaliii babyyy 🥺💕</h1>
     <div class="message"><span class="typing">Can we talk for a moment?<br>There's something important<br>I want to tell you. 🥺</span></div>
     <button class="main-btn" onclick="next(2)">Continue ❤️</button>
   </div>
 
-  <!-- Page 2: Hurt -->
   <div class="card" id="p2" style="display:none;">
-    <img src="https://www.pngall.com/wp-content/uploads/2016/05/Cute-Cat-PNG.png" class="animal" alt="cat">
+    <img src="https://github.com/jefsha13/Sorry-babyyy/blob/main/WhatsApp%20Image%202026-02-16%20at%204.33.08%20AM%20(2).jpeg?raw=true" class="animal" alt="cat">
     <h1>I know...</h1>
     <div class="message"><span class="typing">I know I hurt you lot yesterday<br>and i been feeling sad about it… 💔</span></div>
     <button class="main-btn" onclick="next(3)">Next →</button>
   </div>
 
-  <!-- Page 3: Forgive -->
   <div class="card" id="p3" style="display:none;">
-    <img src="https://www.pngall.com/wp-content/uploads/5/Cute-Cat-Pleading-PNG-Image.png" class="animal" alt="pleading cat">
+    <img src="https://github.com/jefsha13/Sorry-babyyy/blob/main/WhatsApp%20Image%202026-02-16%20at%204.33.08%20AM.jpeg?raw=true" class="animal" alt="pleading cat">
     <h1>Please...</h1>
     <div class="message"><span class="typing">Please forgive me...<br>I miss you so much. 🥹❤️</span></div>
     <button class="main-btn" onclick="next(4)">Finish → 💕</button>
   </div>
 
-  <!-- Page 4: Little things - 4 hearts -->
   <div class="card" id="p4" style="display:none;">
     <h1>Little things I want to tell you babyyy….</h1>
     <p class="message">you...</p>
@@ -189,17 +185,17 @@
     <button class="main-btn" onclick="next(5)">My message →</button>
   </div>
 
-  <!-- Page 5: Cat hearts -->
+ 
   <div class="card" id="p5" style="display:none;">
     <h1>From my heart...</h1>
     <p style="font-size:1.3rem; opacity:0.8; margin:20px 0 40px;">Tap to see message ↓</p>
 
     <button class="cat-btn" onclick="revealCat(1)">
-      <img src="https://png.pngtree.com/png-clipart/20230412/original/pngtree-cute-cat-holding-heart-png-image_9049500.png" class="cat-img" alt="Cat Heart">
+      <img src="https://github.com/jefsha13/Sorry-babyyy/blob/main/WhatsApp%20Image%202026-02-16%20at%204.33.08%20AM%20(1).jpeg?raw=true" class="cat-img" alt="Cat Heart">
     </button>
 
     <button class="cat-btn" onclick="revealCat(2)">
-      <img src="https://png.pngtree.com/png-clipart/20230412/original/pngtree-cute-cat-holding-heart-png-image_9049500.png" class="cat-img" alt="Cat Heart">
+      <img src="https://github.com/jefsha13/Sorry-babyyy/blob/main/WhatsApp%20Image%202026-02-16%20at%204.33.08%20AM%20(1).jpeg?raw=true" class="cat-img" alt="Cat Heart">
     </button>
 
     <div class="reveal-msg" id="catMsg" style="display:none;">I'm Sorry da chellam... 🥺❤️<br>From the bottom of my heart.</div>
@@ -207,7 +203,6 @@
     <button class="main-btn" onclick="showFinal()">I'm Sorry</button>
   </div>
 
-  <!-- Final Sorry Page -->
   <div class="card" id="finalSorry" style="display:none;">
     <h1>I'm Sorry</h1>
     <p class="sorry-msg">
@@ -218,7 +213,7 @@ I’m really sorry for hurting you…I hate that I made you feel like I don’t 
   </div>
 
   <script>
-    // Floating "sorry 🤍"
+  
     function createFloat() {
       const el = document.createElement('div');
       el.className = 'float-item';
@@ -235,7 +230,7 @@ I’m really sorry for hurting you…I hate that I made you feel like I don’t 
     function next(page) {
       document.querySelectorAll('.card').forEach(c => c.style.display = 'none');
       document.getElementById('p' + page).style.display = 'block';
-      window.scrollTo(0, 0); // top-la scroll pannum
+      window.scrollTo(0, 0); 
     }
 
     function reveal(num) {
@@ -292,4 +287,5 @@ I’m really sorry for hurting you…I hate that I made you feel like I don’t 
   </script>
 
 </body>
+
 </html>
